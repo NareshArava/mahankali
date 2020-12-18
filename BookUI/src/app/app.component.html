@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<div style="height: 80vh;">
+  <mat-toolbar style="background-color:rgb(212, 212, 212)">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon id="icon">menu</mat-icon>
+      </button>
+      <!-- <button mat-button [routerLink]="['/dashboard']" id="mybook"><strong>Book House</strong></button> -->
+      <nav class="navbar">
+        <a class="navbar-brand">
+          <img src="/assets/BookLogo.png" alt="">
+        </a>
+      </nav>
+      <span class="menu-spacer"></span>
+      <div fxShow="true" fxHide.lt-md>
+        <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button [routerLink]="['/dashboard']" id="homepage">Home</button>
+        <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button [routerLink]="['favourite']" id="homepage">My Favourite Books</button>
+        <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button [routerLink]="['recommendation']" id="homepage">My Recommendations</button>
+        <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button [routerLink]="['recommendedbyothers']" id="homepage">Recommended by others</button>
+        <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button [routerLink]="['/search']" id="homepage">Search Books</button>
+        <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button (click)="logout()" id="logout">Logout</button>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav style="width:150px; background-color:rgb(212, 212, 212)">
+      <mat-nav-list>
+        <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button [routerLink]="['/dashboard']" id="homepage">Home</button>
+        <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button [matMenuTriggerFor]="menu" id="menu">Menu
+          <mat-icon id="menuicon">more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button class="searchbtn" mat-menu-item [routerLink]="['/search']" id="searchbtn">Search books</button>
+          <button mat-menu-item [routerLink]="['/favourite']" id="favourite">My Favourite Books</button>
+          <button mat-menu-item [routerLink]="['/recommendation']" id="recommendation">My Recommendations</button>
+          <button mat-menu-item [routerLink]="['/recommendedbyothers']" id="recommendedbyothers">Recommended By Others</button>
+
+        </mat-menu>
+        <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button (click)="logout()" id="logout">Logout</button>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+<div class="footer">
+  <div class="copyright">All Copyrights © reserved with MyBook House</div>
+  <section class="herounit-mask">
+    <a href="https://www.facebook.com/">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://www.twitter.com/">
+      <i class="fab fa-twitter"></i>
+    </a>
+    <a href="https://www.youtube.com/">
+      <i class="fab fa-youtube"></i>
+    </a>
+    <a href="https://www.skype.com/">
+      <i class="fab fa-skype"></i>
+    </a>
+    <a href="https://www.linkedin.com/">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </section>
+</div>

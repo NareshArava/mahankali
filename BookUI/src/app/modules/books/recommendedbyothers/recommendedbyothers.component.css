@@ -1,0 +1,48 @@
+h3{
+    text-align: center;color:grey
+}
+.book-thumbnail{
+    border-radius: 0;
+    box-shadow: 5px 5px 15px #166ae9;
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    width:250px; 
+    height: 420px;
+    margin:15px;
+    position: relative;
+}
+.book-thumbnail:hover{
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 5px 5px 10px rgb(255, 0, 0);   
+}
+.book-image img.active{
+    height: 470px;
+    width: 350px;
+    margin: 0px auto;
+    border: none;border-radius: 5px;
+}
+h4{
+    margin: 0px
+}
+.book-image{
+    height: 300px;
+    width: 250px;
+}
+.book-actions{
+    text-align: right;
+}
+.book-container{
+    margin:auto;
+    width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height:100vh;
+    margin-left: 8%;
+}
+.search-block{
+ margin: 10px;
+}
